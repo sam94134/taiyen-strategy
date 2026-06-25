@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>台鹽生技 × 第二生命曲線｜香氛品類策略</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans TC',sans-serif;background:#f4f2ef;color:#1a1a1a;font-size:15px;line-height:1.7}
+
+/* ─── Layout ─── */
+.wrap{max-width:960px;margin:0 auto;padding:0 0 80px}
+
+/* ─── Cover ─── */
+.cover{
+  background:linear-gradient(150deg,#0a2a3a 0%,#0d3d52 40%,#0e5068 100%);
+  color:#fff;padding:70px 64px 60px;position:relative;overflow:hidden
+}
+.cover::before{
+  content:'';position:absolute;right:-100px;top:-100px;
+  width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(126,200,227,0.12),transparent 70%)
+}
+.cover::after{
+  content:'';position:absolute;left:30%;bottom:-80px;
+  width:260px;height:260px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,0.05),transparent 70%)
+}
+.cover-tag{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:12px}
+.cover h1{font-size:38px;font-weight:900;line-height:1.2;margin-bottom:8px}
+.cover h1 span{color:#7ec8e3}
+.cover-sub{font-size:13.5px;color:rgba(255,255,255,.6);margin-bottom:40px;font-weight:300}
+.cover-meta{display:flex;gap:40px;border-top:1px solid rgba(255,255,255,.12);padding-top:28px}
+.cover-stat{flex:1}
+.cover-stat .num{font-size:28px;font-weight:900;color:#7ec8e3;line-height:1}
+.cover-stat .label{font-size:10px;color:rgba(255,255,255,.5);margin-top:4px;letter-spacing:.5px}
+
+/* ─── Nav ─── */
+.nav{background:#0d3d52;display:flex;gap:0;overflow-x:auto;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.08)}
+.nav a{color:rgba(255,255,255,.6);text-decoration:none;font-size:11px;letter-spacing:.5px;padding:14px 20px;white-space:nowrap;transition:color .2s;border-right:1px solid rgba(255,255,255,.06)}
+.nav a:hover{color:#7ec8e3}
+
+/* ─── Section ─── */
+.section{padding:52px 64px;border-bottom:1px solid #e8e4df}
+.section:last-of-type{border-bottom:none}
+.section-tag{font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:#1a5276;font-weight:700;margin-bottom:6px}
+.section-title{font-size:24px;font-weight:900;color:#0d2137;margin-bottom:6px;line-height:1.3}
+.section-lead{font-size:14px;color:#555;margin-bottom:32px;max-width:680px;line-height:1.75}
+
+/* ─── Cards ─── */
+.card-grid{display:grid;gap:18px}
+.card-grid.col2{grid-template-columns:1fr 1fr}
+.card-grid.col3{grid-template-columns:1fr 1fr 1fr}
+.card-grid.col4{grid-template-columns:1fr 1fr 1fr 1fr}
+.card{background:#fff;border-radius:14px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.card.dark{background:#0d2137;color:#fff}
+.card.teal{background:#e8f4f8;border-left:4px solid #1a5276}
+.card.warning{background:#fef9ec;border-left:4px solid #e67e22}
+.card.danger{background:#fdf0ef;border-left:4px solid #c0392b}
+.card.success{background:#eafaf1;border-left:4px solid #1e8449}
+.card h4{font-size:13px;font-weight:700;margin-bottom:8px;color:#0d2137}
+.card.dark h4{color:#7ec8e3}
+.card p{font-size:12.5px;color:#555;line-height:1.7}
+.card.dark p{color:rgba(255,255,255,.7)}
+.card-num{font-size:36px;font-weight:900;line-height:1;color:#1a5276;margin-bottom:4px}
+.card-unit{font-size:12px;color:#888;margin-top:2px}
+
+/* ─── Big stat row ─── */
+.stat-row{display:flex;gap:16px;margin-bottom:24px}
+.stat-box{flex:1;background:#fff;border-radius:12px;padding:20px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.stat-box .big{font-size:32px;font-weight:900;color:#1a5276;line-height:1}
+.stat-box .sm{font-size:11px;color:#888;margin-top:5px}
+.stat-box.accent{background:linear-gradient(135deg,#1a5276,#0d3d52);color:#fff}
+.stat-box.accent .big{color:#7ec8e3}
+.stat-box.accent .sm{color:rgba(255,255,255,.6)}
+
+/* ─── Brand table ─── */
+.brand-row{display:flex;gap:14px;margin-bottom:14px;align-items:stretch}
+.brand-chip{background:#1a5276;color:#fff;border-radius:8px;padding:10px 16px;font-size:12px;font-weight:700;white-space:nowrap;display:flex;align-items:center}
+.brand-desc{background:#fff;border-radius:8px;padding:12px 18px;flex:1;font-size:12.5px;color:#444;box-shadow:0 1px 6px rgba(0,0,0,.06)}
+.brand-desc b{color:#0d2137}
+
+/* ─── Challenge list ─── */
+.challenge-item{display:flex;gap:16px;align-items:flex-start;background:#fff;border-radius:12px;padding:18px 20px;margin-bottom:12px;box-shadow:0 1px 8px rgba(0,0,0,.05)}
+.challenge-num{width:32px;height:32px;border-radius:50%;background:#fdf0ef;color:#c0392b;font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.challenge-item h5{font-size:13.5px;font-weight:700;color:#0d2137;margin-bottom:3px}
+.challenge-item p{font-size:12.5px;color:#666;line-height:1.6}
+
+/* ─── Opportunity blocks ─── */
+.opp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.opp-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07)}
+.opp-header{background:linear-gradient(135deg,#1a5276,#0d3d52);color:#fff;padding:16px 20px}
+.opp-header .icon{font-size:22px;margin-bottom:4px}
+.opp-header h4{font-size:14px;font-weight:700}
+.opp-body{padding:16px 20px}
+.opp-body p{font-size:12.5px;color:#555;line-height:1.7}
+.opp-body .tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.opp-body .tag{background:#e8f4f8;color:#1a5276;font-size:10.5px;font-weight:600;padding:3px 9px;border-radius:20px}
+
+/* ─── Strategy curve ─── */
+.curve-section{background:linear-gradient(135deg,#0d2137,#0a3a50);border-radius:16px;padding:36px 40px;color:#fff;margin-bottom:24px}
+.curve-section h3{font-size:20px;font-weight:900;margin-bottom:8px}
+.curve-section p{font-size:13px;color:rgba(255,255,255,.7);margin-bottom:24px;line-height:1.7}
+.phase-track{display:flex;gap:0;position:relative}
+.phase-track::before{content:'';position:absolute;top:20px;left:20px;right:20px;height:2px;background:rgba(255,255,255,.15);z-index:0}
+.phase{flex:1;position:relative;z-index:1;text-align:center;padding:0 8px}
+.phase-dot{width:40px;height:40px;border-radius:50%;background:#1a5276;border:2px solid #7ec8e3;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#7ec8e3;margin:0 auto 10px}
+.phase-label{font-size:10px;color:rgba(255,255,255,.6);letter-spacing:.5px;margin-bottom:4px}
+.phase-name{font-size:12.5px;font-weight:700;color:#fff;line-height:1.3}
+
+/* ─── Product matrix ─── */
+.matrix-row{display:grid;grid-template-columns:140px 1fr 1fr 1fr;gap:12px;margin-bottom:10px;align-items:center}
+.matrix-label{font-size:12px;font-weight:700;color:#0d2137;background:#e8f4f8;padding:10px 14px;border-radius:8px}
+.matrix-cell{background:#fff;border-radius:8px;padding:10px 14px;font-size:11.5px;color:#444;box-shadow:0 1px 5px rgba(0,0,0,.05)}
+.matrix-cell b{color:#1a5276;display:block;font-size:12px;margin-bottom:2px}
+.matrix-header{display:grid;grid-template-columns:140px 1fr 1fr 1fr;gap:12px;margin-bottom:8px}
+.matrix-header div{font-size:10px;letter-spacing:1px;font-weight:700;color:#1a5276;text-transform:uppercase;text-align:center;padding:6px 0}
+.matrix-header div:first-child{text-align:left}
+
+/* ─── KOL section ─── */
+.kol-box{background:#fff;border-radius:14px;padding:24px;box-shadow:0 2px 10px rgba(0,0,0,.07);display:flex;gap:20px;align-items:flex-start;margin-bottom:14px}
+.kol-icon{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a5276,#7ec8e3);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.kol-content h4{font-size:14px;font-weight:700;color:#0d2137;margin-bottom:4px}
+.kol-content p{font-size:12.5px;color:#555;line-height:1.6}
+.kol-stats{display:flex;gap:10px;margin-top:8px}
+.kol-stat{background:#e8f4f8;border-radius:6px;padding:4px 10px;font-size:11px;color:#1a5276;font-weight:600}
+
+/* ─── Roadmap ─── */
+.roadmap{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.road-card{border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.07)}
+.road-header{padding:14px 20px;font-size:13px;font-weight:700;color:#fff}
+.road-header.p1{background:linear-gradient(90deg,#1a5276,#1f6fa8)}
+.road-header.p2{background:linear-gradient(90deg,#0e7a5a,#10a077)}
+.road-header.p3{background:linear-gradient(90deg,#7d3c98,#9b59b6)}
+.road-header.p4{background:linear-gradient(90deg,#c0392b,#e74c3c)}
+.road-body{background:#fff;padding:16px 20px}
+.road-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:8px;font-size:12.5px;color:#444}
+.road-dot{width:6px;height:6px;border-radius:50%;background:#1a5276;margin-top:7px;flex-shrink:0}
+
+/* ─── Footer ─── */
+.footer-bar{background:#0d2137;color:rgba(255,255,255,.35);font-size:10px;padding:16px 64px;display:flex;justify-content:space-between}
+
+/* ─── Divider ─── */
+.divider{height:1px;background:linear-gradient(90deg,#1a5276,transparent);margin:28px 0;opacity:.3}
+
+/* ─── Highlight box ─── */
+.highlight{background:linear-gradient(135deg,#e8f4f8,#d4eaf5);border-radius:12px;padding:20px 24px;margin-top:20px;border-left:4px solid #1a5276}
+.highlight p{font-size:13px;color:#0d2137;line-height:1.75}
+.highlight strong{color:#1a5276}
+
+/* ─── Source ─── */
+.source-note{font-size:10px;color:#aaa;margin-top:20px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ════ COVER ════ -->
+<div class="cover">
+  <div class="cover-tag">Internal Strategy Report · 2026</div>
+  <h1>台鹽生技<br>第二生命曲線<br><span>香氛保養 · 香水 · 擴香</span></h1>
+  <p class="cover-sub">從海鹽到香氛的品牌延伸可行性分析與策略路徑</p>
+  <div class="cover-meta">
+    <div class="cover-stat"><div class="num">10.3%</div><div class="label">台灣香氛市場年增率</div></div>
+    <div class="cover-stat"><div class="num">12.5%</div><div class="label">亞洲小眾香氛市場年增率</div></div>
+    <div class="cover-stat"><div class="num">72%+</div><div class="label">全球香氛營收來自非大牌</div></div>
+    <div class="cover-stat"><div class="num">1737</div><div class="label">臺鹽實業股票代號</div></div>
+  </div>
+</div>
+
+<!-- ════ NAV ════ -->
+<nav class="nav">
+  <a href="#overview">01 現況總覽</a>
+  <a href="#brand">02 品牌體系</a>
+  <a href="#challenge">03 核心挑戰</a>
+  <a href="#rebrand">04 品牌改造</a>
+  <a href="#market">05 香氛市場</a>
+  <a href="#strategy">06 第二曲線策略</a>
+  <a href="#product">07 產品矩陣</a>
+  <a href="#marketing">08 行銷路徑</a>
+  <a href="#venue">09 合作場域</a>
+  <a href="#roadmap">10 執行路線圖</a>
+</nav>
+
+<!-- ════ 01 現況總覽 ════ -->
+<div class="section" id="overview">
+  <div class="section-tag">01 · Current State</div>
+  <div class="section-title">台鹽生技近三年經營現況</div>
+  <p class="section-lead">台鹽生技（臺鹽實業，股票代號 1737）是台灣最具歷史的國營民營化企業之一，核心業務橫跨製鹽、包裝水、保健食品、美容保養與清潔用品，但成長引擎正面臨結構性瓶頸。</p>
+
+  <div class="stat-row">
+    <div class="stat-box"><div class="big">1952</div><div class="sm">創立年份（台灣製鹽總廠）</div></div>
+    <div class="stat-box accent"><div class="big">70</div><div class="sm">加盟門市（特許 + 複合加盟）</div></div>
+    <div class="stat-box accent"><div class="big">9</div><div class="sm">直營門市</div></div>
+    <div class="stat-box"><div class="big">79家</div><div class="sm">全台實體通路總數</div></div>
+  </div>
+
+  <!-- 產品別營收佔比橫條 -->
+  <div style="background:#fff;border-radius:14px;padding:22px 26px;box-shadow:0 2px 12px rgba(0,0,0,.06);margin-bottom:18px">
+    <div style="font-size:12px;font-weight:700;color:#0d2137;margin-bottom:14px">📊 產品別營收佔比（法說資料）</div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:11.5px;color:#444;margin-bottom:4px"><span>🧂 鹽品系列</span><span style="font-weight:700;color:#1a5276">46%</span></div>
+        <div style="background:#e8eef4;border-radius:4px;height:10px"><div style="background:#1a5276;width:46%;height:100%;border-radius:4px"></div></div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:11.5px;color:#444;margin-bottom:4px"><span>💧 包裝飲用水</span><span style="font-weight:700;color:#1a5276">28%</span></div>
+        <div style="background:#e8eef4;border-radius:4px;height:10px"><div style="background:#1a5276;width:28%;height:100%;border-radius:4px"></div></div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:11.5px;color:#444;margin-bottom:4px"><span>🧴 生技產品合計（保養＋清潔＋保健）</span><span style="font-weight:700;color:#e67e22">17%</span></div>
+        <div style="background:#e8eef4;border-radius:4px;height:10px"><div style="background:#e67e22;width:17%;height:100%;border-radius:4px"></div></div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:11.5px;color:#444;margin-bottom:4px"><span>🌿 香氛品類（現有）</span><span style="font-weight:700;color:#999">≈ 0%</span></div>
+        <div style="background:#e8eef4;border-radius:4px;height:10px"><div style="background:#bbb;width:1%;height:100%;border-radius:4px"></div></div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:11.5px;color:#444;margin-bottom:4px"><span>🌱 其他（綠能等）</span><span style="font-weight:700;color:#888">9%</span></div>
+        <div style="background:#e8eef4;border-radius:4px;height:10px"><div style="background:#aaa;width:9%;height:100%;border-radius:4px"></div></div>
+      </div>
+    </div>
+    <div style="font-size:10px;color:#aaa;margin-top:10px">資料來源：臺鹽法說會資料（2018年全年，生技產品結構近年相對穩定）</div>
+  </div>
+
+  <div class="card-grid col2">
+    <div class="card teal">
+      <h4>🏭 五大業務線（財報產品別佔比）</h4>
+      <p>① <b>鹽品系列</b>（調味鹽、機能鹽）<b style="color:#c0392b">約 46%</b>&nbsp;② <b>包裝飲用水</b> <b style="color:#c0392b">約 28%</b>&nbsp;③ <b>生技產品合計</b>（美容保養＋清潔用品＋保健食品）<b style="color:#c0392b">約 17%</b>&nbsp;④ 其他（綠能等）9%。鹽與水合計佔 <b>74%</b>，生技三線整合僅佔 17%，香氛目前幾乎為零。</p>
+    </div>
+    <div class="card teal">
+      <h4>🏪 通路現況</h4>
+      <p><b>直營門市 9 家</b>、<b>加盟門市 70 家</b>（特許加盟 + 複合加盟），全台實體通路共 79 家。另有台塩線上購、momo/PChome 電商、國旅卡特約店。<br><b style="color:#1a5276">→ 品牌改造計畫進行中</b>，預計以 79 家門市為主要改造場域。</p>
+    </div>
+    <div class="card teal">
+      <h4>🌐 近期策略亮點</h4>
+      <p>跨界合作策略：與台灣在地功能鞋品牌「DK氣墊鞋」聯盟，打造「1+1>2」效應。積極推動數位轉型（APP積點、線上下單門市取貨），並持續拓展海外（大陸）市場。</p>
+    </div>
+    <div class="card teal">
+      <h4>🏆 近期得獎</h4>
+      <p>綠迷雅奢逆時御膚雙萃精華獲 2025 GBWA 全球美麗健康獎三項殊榮（含最佳消費者票選）。高純度未變性 II 型膠原蛋白（CollaFix®）獲第39屆日本東京國際發明展金牌。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════ 02 品牌體系 ════ -->
+<div class="section" id="brand">
+  <div class="section-tag">02 · Brand Architecture</div>
+  <div class="section-title">現有品牌體系</div>
+  <p class="section-lead">台鹽生技旗下發展多個子品牌，各自對應不同產品線，但整體品牌識別仍以「台鹽」母品牌信任感為主要背書。</p>
+
+  <div class="brand-row">
+    <div class="brand-chip">綠迷雅<br>LUMIEL</div>
+    <div class="brand-desc"><b>定位：頂級抗老保養</b>｜涵蓋抗老、美白、保濕、緊緻等系列。2025年在國際美妝獎項表現亮眼。競爭激烈，對手為國際高端品牌（SK-II、KIEHL'S等）。</div>
+  </div>
+  <div class="brand-row">
+    <div class="brand-chip">蓓舒美</div>
+    <div class="brand-desc"><b>定位：日常肌膚保養</b>｜主打基礎保濕、清潔、身體護理。大眾平價定位，主要在門市銷售，電商能見度較低。</div>
+  </div>
+  <div class="brand-row">
+    <div class="brand-chip">絲易康<br>EZ-HEALTH</div>
+    <div class="brand-desc"><b>定位：頭皮頭髮養護</b>｜強調台大醫學院合作研發，以「60植萃」為核心成分。功效型洗護，有穩定消費者口碑。</div>
+  </div>
+  <div class="brand-row">
+    <div class="brand-chip">膠原蛋白<br>系列</div>
+    <div class="brand-desc"><b>定位：吃的保養品</b>｜海陸雙膠原、CollaFix® I型膠原蛋白粉。電商熱銷品項，在博客來、PChome、momo有穩定流量。</div>
+  </div>
+  <div class="brand-row">
+    <div class="brand-chip">鹽品 × 文創</div>
+    <div class="brand-desc"><b>定位：台灣在地特色</b>｜以台灣製鹽文化為品牌底蘊，推出文創禮品系列。「黃金香氛禮盒」曾獲2016台灣精品獎，顯示品牌已有香氛品類延伸的歷史嘗試。</div>
+  </div>
+
+  <div class="highlight">
+    <p>⚡ <strong>關鍵洞察：</strong>台鹽早在2016年就曾以「黃金香氛禮盒」切入香氛品類並獲台灣精品獎，說明品牌基因與消費者對香氛延伸有接受度，但未被系統性發展為獨立業務線。</p>
+  </div>
+</div>
+
+<!-- ════ 03 核心挑戰 ════ -->
+<div class="section" id="challenge">
+  <div class="section-tag">03 · Core Challenges</div>
+  <div class="section-title">三大核心挑戰</div>
+  <p class="section-lead">台鹽生技的核心業務正面臨成長瓶頸，需要尋找新的業績引擎。</p>
+
+  <div class="challenge-item">
+    <div class="challenge-num">1</div>
+    <div>
+      <h5>核心業務增長有限，生技事業佔比偏低</h5>
+      <p>根據臺鹽法說資料，鹽品（46%）與包裝水（28%）合計佔營收 <b>74%</b>，但兩者屬於低毛利民生必需品，難以品牌溢價提升獲利。美容保養、清潔、保健食品三線<b>合計僅佔 17%</b>，且各品類波動大（曾因單一大型企業訂單消失導致生技營收單季年減三成）。香氛品類目前佔比近乎為零，是純增量空間。</p>
+    </div>
+  </div>
+  <div class="challenge-item">
+    <div class="challenge-num">2</div>
+    <div>
+      <h5>多品牌策略分散，識別度不高</h5>
+      <p>綠迷雅、蓓舒美、絲易康各自獨立，缺乏統一的品牌語言與視覺系統。在消費者心智中，難以建立鮮明的品牌識別，且保養品牌市場競爭中夾在國際品牌與韓系品牌之間，定位模糊。</p>
+    </div>
+  </div>
+  <div class="challenge-item">
+    <div class="challenge-num">3</div>
+    <div>
+      <h5>品牌年齡老化，難以觸及年輕世代</h5>
+      <p>「台鹽」母品牌形象偏傳統、國營，對25–35歲年輕消費者的吸引力有限。在社群媒體的聲量較低，KOL合作尚未形成系統性策略，缺乏能引爆話題的品牌資產。</p>
+    </div>
+  </div>
+
+  <div class="card-grid col3" style="margin-top:24px">
+    <div class="card warning">
+      <h4>⚠️ 通路壓力</h4>
+      <p>實體門市面臨電商衝擊，加盟版圖仍在建構中，通路多元化需持續投入。</p>
+    </div>
+    <div class="card warning">
+      <h4>⚠️ 國際競品</h4>
+      <p>歐舒丹、KIEHL'S、Jo Malone等品牌已在台灣高端香氛保養市場建立穩固地位。</p>
+    </div>
+    <div class="card warning">
+      <h4>⚠️ 成本上升</h4>
+      <p>香氛原料（天然精油、香精）採購成本持續上升，市場競爭同步加劇。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════ 04 品牌改造 ════ -->
+<div class="section" id="rebrand">
+  <div class="section-tag">04 · Brand Transformation</div>
+  <div class="section-title">品牌改造計畫：79 家門市的蛻變機會</div>
+  <p class="section-lead">台鹽生技擁有 9 家直營店 + 70 家加盟店，共 79 個實體觸點。品牌改造不只是換裝潢，更是重新定義台鹽與消費者的關係——從「功能性國營品牌」升級為「台灣在地生活美學品牌」。</p>
+
+  <!-- 現況 vs 目標 -->
+  <div class="card-grid col2" style="margin-bottom:24px">
+    <div class="card danger">
+      <h4>📍 現況：品牌形象痛點</h4>
+      <p>• 門市視覺風格偏傳統，缺乏吸引年輕世代的美感<br>• 多品牌陳列混雜（綠迷雅、蓓舒美、絲易康等），視覺凌亂<br>• 「台鹽」給消費者聯想仍停留在「鹽」「國營」<br>• 體驗感不足，門市偏向傳統藥妝/直銷型陳列<br>• 79 家門市風格不一致，品牌識別分散</p>
+    </div>
+    <div class="card success">
+      <h4>🎯 目標：品牌改造後的形象</h4>
+      <p>• 統一視覺識別系統（VI）：台灣海洋藍 × 純淨白為核心色調<br>• 「生活美學選品店」體驗感：陳列設計、燈光、香氛氛圍<br>• 清晰的品牌層次：台鹽母品牌 → 各子品牌分區導覽<br>• 導入香氛體驗元素（擴香、試聞台）作為新品牌形象錨點<br>• 全 79 家門市統一形象，建立強烈品牌識別</p>
+    </div>
+  </div>
+
+  <!-- 改造三層次 -->
+  <div class="section-tag" style="margin-bottom:10px">品牌改造三個層次</div>
+  <div class="challenge-item">
+    <div class="challenge-num" style="background:#e8f4f8;color:#1a5276;font-size:11px">空間</div>
+    <div>
+      <h5>空間體驗升級</h5>
+      <p>門市導入統一的空間設計語言——以台灣海鹽礦物的天然色系（礦物白、海藍、沙色）為基底，增設「香氛體驗台」（試聞、擴香展示），讓消費者進門就能感受到品牌轉型的新氣象。9家直營店優先改造，作為示範標竿，再推廣至70家加盟體系。</p>
+    </div>
+  </div>
+  <div class="challenge-item">
+    <div class="challenge-num" style="background:#e8f4f8;color:#1a5276;font-size:11px">視覺</div>
+    <div>
+      <h5>視覺識別系統（VI）重建</h5>
+      <p>建立台鹽生技全新品牌視覺系統，涵蓋 Logo 更新或副品牌設計、門市招牌、包裝設計語言、社群視覺模板。重點是讓「台鹽」在消費者心中從「傳統鹽廠」升級為「台灣天然生技美學品牌」。香氛新品線的視覺可作為品牌新形象的領頭羊。</p>
+    </div>
+  </div>
+  <div class="challenge-item">
+    <div class="challenge-num" style="background:#e8f4f8;color:#1a5276;font-size:11px">敘事</div>
+    <div>
+      <h5>品牌故事重新敘事</h5>
+      <p>從「1952年台灣製鹽廠」的歷史重新挖掘品牌資產——台灣西南沿海鹽田、百年製鹽工藝，這些都是全球無法複製的在地故事。將其轉化為現代消費者語言，透過門市展示、社群內容、KOL合作，建立「台灣海洋礦物」的品牌敘事核心。</p>
+    </div>
+  </div>
+
+  <!-- 香氛作為改造錨點 -->
+  <div class="highlight">
+    <p>💡 <strong>香氛新品 = 品牌改造的最佳引信：</strong>相較於調整現有保養品線，「全新香氛品類」能以最少包袱傳遞最新品牌形象。消費者不會用舊印象框住新品類，反而更容易接受「台鹽也能做出有品味的香水」這件事。建議讓香氛新品成為品牌改造對外溝通的第一波主角，先在馥鈺台南等高端場域建立印象，再帶動整體品牌升級感知。</p>
+  </div>
+
+  <!-- 直營 vs 加盟改造節奏 -->
+  <div class="section-tag" style="margin:24px 0 10px">直營 vs 加盟改造節奏建議</div>
+  <div class="card-grid col2">
+    <div class="card dark">
+      <h4>🏬 直營 9 家｜旗艦示範先行</h4>
+      <p>直營店由公司全權主導，改造彈性最大。建議選 2–3 家人流最高的直營店優先完整改造，作為新品牌形象的旗艦示範店。香氛體驗區、新 VI 系統、香氛新品展示全面導入，對外作為媒體曝光與 KOL 打卡場景。</p>
+    </div>
+    <div class="card dark">
+      <h4>🤝 加盟 70 家｜分階段輔導升級</h4>
+      <p>加盟主對改造成本敏感，需設計「低門檻升級包」——以新 VI 物料（招牌貼膜、陳列道具、包裝換新）搭配總部補貼或分期方式推廣。香氛產品線作為新品導入，可為加盟主帶來新客流，提高其改造意願。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════ 05（原04） 香氛市場 ════ -->
+<div class="section" id="market">
+  <div class="section-tag">04 · Market Opportunity</div>
+  <div class="section-title">香氛市場機會</div>
+  <p class="section-lead">台灣香氛市場正處於高速成長期，小眾品牌崛起、消費者個性化需求提升，為具備獨特品牌故事的新進者提供了難得的時間窗口。</p>
+
+  <div class="stat-row">
+    <div class="stat-box"><div class="big">10.3%</div><div class="sm">台灣香氛香水類年增率（2025上半年）</div></div>
+    <div class="stat-box accent"><div class="big">12.5%</div><div class="sm">亞洲小眾香氛市場年增率（Statista/Euromonitor 2024）</div></div>
+    <div class="stat-box"><div class="big">72%+</div><div class="sm">全球香氛營收來自非奢侈集團品牌</div></div>
+  </div>
+
+  <div class="opp-grid">
+    <div class="opp-card">
+      <div class="opp-header"><div class="icon">🌿</div><h4>天然 & 永續趨勢</h4></div>
+      <div class="opp-body">
+        <p>消費者對天然成分、環保包裝的需求急升。台鹽「海鹽」「礦物質」的天然形象，是進入永續香氛市場的強大背書，可主打「無人工合成香精、台灣海洋礦物」訴求。</p>
+        <div class="tag-row"><span class="tag">天然精油</span><span class="tag">永續包裝</span><span class="tag">礦物成分</span></div>
+      </div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-header"><div class="icon">🪄</div><h4>個性化 & 小眾崛起</h4></div>
+      <div class="opp-body">
+        <p>2025年消費者視香氛為「自我表達」工具，香水市場正朝個性化方向轉移。小眾品牌有更大機會以獨特嗅覺記憶（如「台灣西南沿海的夏日海風」）觸動情感。</p>
+        <div class="tag-row"><span class="tag">情感連結</span><span class="tag">在地故事</span><span class="tag">限定系列</span></div>
+      </div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-header"><div class="icon">🏠</div><h4>居家香氛爆發</h4></div>
+      <div class="opp-body">
+        <p>居家擴香、蠟燭、香氛噴霧的市場關注度於2025年3月起明顯上升，4月達高峰。疫情後居家生活質量意識提升，帶動「居家療癒感」需求持續旺盛。</p>
+        <div class="tag-row"><span class="tag">水氧機擴香</span><span class="tag">香氛蠟燭</span><span class="tag">室內噴霧</span></div>
+      </div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-header"><div class="icon">📱</div><h4>社群 & KOL 帶貨</h4></div>
+      <div class="opp-body">
+        <p>香氛保養是社群媒體「開箱」內容最受歡迎的品類之一。精緻包裝的香氛產品視覺性強，適合Reel/短影音呈現，KOL帶貨ROI高，已有案例單支影片帶動60萬業績。</p>
+        <div class="tag-row"><span class="tag">開箱影音</span><span class="tag">KOL合作</span><span class="tag">三平台曝光</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight" style="margin-top:24px">
+    <p>💡 <strong>台鹽的獨特優勢：</strong>「台灣海鹽」在全球香氛原料市場中本就是高端素材（法國鹽之花是國際香氛界的珍貴原料）。台鹽掌握台灣本土海鹽資源，可以「台灣版鹽之花」角度切入，打造具有不可複製性的在地香氛品牌敘事。</p>
+  </div>
+</div>
+
+<!-- ════ 05 第二曲線策略 ════ -->
+<div class="section" id="strategy">
+  <div class="section-tag">05 · Second Curve Strategy</div>
+  <div class="section-title">第二生命曲線：香氛品牌策略</div>
+  <p class="section-lead">當第一曲線（鹽、水、傳統保養）成長趨緩，必須在高點前就啟動第二曲線。香氛品類是台鹽在品牌資產、技術能力、通路體系上最具延伸優勢的新業務方向。</p>
+
+  <div class="curve-section">
+    <h3>🌊 SELUNA 海鹽香氛｜建議品牌命名方向</h3>
+    <p>以「SEL（法文：鹽）+ LUNA（月亮，象徵海洋潮汐與純淨）」為命名概念，建立獨立香氛子品牌，與母品牌台鹽形成協同效應，而非稀釋原有品牌形象。</p>
+    <div class="phase-track">
+      <div class="phase"><div class="phase-dot">1</div><div class="phase-label">Year 1</div><div class="phase-name">品牌建立<br>& 旗艦產品</div></div>
+      <div class="phase"><div class="phase-dot">2</div><div class="phase-label">Year 2</div><div class="phase-name">產品線<br>擴張</div></div>
+      <div class="phase"><div class="phase-dot">3</div><div class="phase-label">Year 2–3</div><div class="phase-name">體驗<br>經濟</div></div>
+      <div class="phase"><div class="phase-dot">4</div><div class="phase-label">Year 3+</div><div class="phase-name">品牌出海<br>& 規模化</div></div>
+    </div>
+  </div>
+
+  <div class="card-grid col2">
+    <div class="card">
+      <h4>🎯 品牌核心主張</h4>
+      <p>「台灣海洋礦物 × 現代香氛美學」——以台灣西南沿海純淨海鹽為原料核心，結合精油萃取工藝，打造具有台灣地域識別的天然香氛體驗。定價策略：中高端（中型香水 NT$1,800–3,500，擴香 NT$800–1,500）。</p>
+    </div>
+    <div class="card">
+      <h4>🧬 核心差異化</h4>
+      <p>① 台灣本土：非仿效歐洲品牌，主打「台灣海洋」獨特敘事<br>② 成分可追溯：台灣西南沿海海鹽原料，精油成分公開透明<br>③ 永續承諾：環保包裝、可回收瓶身<br>④ 台鹽背書：信任感、品質保證<br>⑤ 體驗串聯：直營門市香氛體驗區 × 馥鈺台南合作場域</p>
+    </div>
+    <div class="card success">
+      <h4>✅ 台鹽現有優勢盤點</h4>
+      <p>• 海鹽原料掌控<br>• 全台 79 家門市實體通路<br>• 既有保養品研發生產能力<br>• 全台加盟通路體系<br>• 曾獲台灣精品獎的香氛禮盒經驗<br>• 台灣在地品牌信任度</p>
+    </div>
+    <div class="card danger">
+      <h4>⚠️ 需補強的缺口</h4>
+      <p>• 調香師 / 香氛研發專業人才<br>• 香水品牌美學設計能力<br>• 年輕消費者社群行銷能力<br>• 高端通路（百貨、選品店）資源<br>• 香氛產業供應鏈整合經驗</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════ 06 產品矩陣 ════ -->
+<div class="section" id="product">
+  <div class="section-tag">06 · Product Matrix</div>
+  <div class="section-title">香氛品類產品矩陣</div>
+  <p class="section-lead">建議以三條產品線切入，由低門檻的居家香氛開始，逐步建立個人香水品牌形象，最終以保養香氛作為最高毛利的利基市場。</p>
+
+  <div class="matrix-header">
+    <div>產品線</div>
+    <div>Phase 1 旗艦品</div>
+    <div>Phase 2 擴張品</div>
+    <div>毛利 / 特性</div>
+  </div>
+
+  <div class="matrix-row">
+    <div class="matrix-label">🕯️ 居家香氛</div>
+    <div class="matrix-cell"><b>海鹽礦物擴香石</b>台灣海鹽製作擴香底座，搭配精油</div>
+    <div class="matrix-cell"><b>香氛蠟燭 · 室內噴霧 · 水氧機精油</b></div>
+    <div class="matrix-cell"><b>★★★★</b><br>高視覺性，社群友好，開箱效果佳</div>
+  </div>
+  <div class="matrix-row">
+    <div class="matrix-label">🌸 個人香水</div>
+    <div class="matrix-cell"><b>海風淡香水 系列</b>以台灣西岸海風、鹽田、白茉莉為靈感</div>
+    <div class="matrix-cell"><b>淡香精 · 限定節氣系列 · 客製調香</b></div>
+    <div class="matrix-cell"><b>★★★★★</b><br>品牌溢價最高，建立身份認同感</div>
+  </div>
+  <div class="matrix-row">
+    <div class="matrix-label">💆 香氛保養</div>
+    <div class="matrix-cell"><b>海鹽磨砂身體去角質霜</b>海鹽顆粒＋精油，SPA感體驗</div>
+    <div class="matrix-cell"><b>香氛身體乳 · 香氛沐浴鹽 · 護手霜</b></div>
+    <div class="matrix-cell"><b>★★★★</b><br>與現有保養線高度協同，易切入</div>
+  </div>
+
+  <div class="highlight">
+    <p>📦 <strong>Phase 1 建議旗艦組合：</strong>「台灣海鹽 × 精油擴香禮盒」——海鹽擴香石 + 2支精油 + 品牌故事卡，定價 NT$1,280，主打伴手禮與節慶市場（中秋、聖誕、情人節），首波在馥鈺台南（亞洲香水節）限定上架，製造話題稀缺感。</p>
+  </div>
+</div>
+
+<!-- ════ 07 行銷路徑 ════ -->
+<div class="section" id="marketing">
+  <div class="section-tag">07 · Marketing Strategy</div>
+  <div class="section-title">行銷策略：KOL × 三平台 × 體驗</div>
+  <p class="section-lead">香氛品類高度依賴視覺與情感敘事，KOL短影音是最有效的品牌認知建立管道。建議以「生活風格型」KOL為主力，搭配馥鈺台南等高端場域的體驗行銷。</p>
+
+  <div class="kol-box">
+    <div class="kol-icon">🌊</div>
+    <div class="kol-content">
+      <h4>威廉艾米 The Dosi｜推薦優先合作</h4>
+      <p>情侶生活風格創作者，受眾25–40歲女性為主，與台鹽香氛目標客群高度重疊。具備強帶貨轉換力（單檔近100台家電、單檔約60萬業績、單支影片5,000+留言），且旅遊+居家+開箱的內容定位可完美融入香氛使用情境（如「旅遊前的出門保養儀式」「台南旅遊 Vlog 中置入馥鈺台南香氛體驗」）。</p>
+      <div class="kol-stats">
+        <span class="kol-stat">FB 31萬</span>
+        <span class="kol-stat">TikTok 22萬</span>
+        <span class="kol-stat">IG 12萬</span>
+        <span class="kol-stat">三平台總觸及 65萬+</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-grid col3" style="margin-bottom:20px">
+    <div class="card">
+      <h4>📍 馥鈺台南體驗行銷</h4>
+      <p>在馥鈺台南（河樂廣場B1）舉辦「海鹽調香工作坊」，讓消費者親手製作個人香氛，創造品牌記憶點，並帶動社群用戶生成內容（UGC）自然擴散。亞洲香水節期間可規劃快閃活動，集中製造話題聲量。</p>
+    </div>
+    <div class="card">
+      <h4>🎁 禮盒 × 電商策略</h4>
+      <p>主攻節慶禮盒市場：中秋、聖誕、情人節、母親節。與博客來、momo、PChome現有合作電商渠道快速鋪貨，搭配限時折扣碼或KOL專屬連結追蹤ROI。</p>
+    </div>
+    <div class="card">
+      <h4>🏬 複合加盟通路</h4>
+      <p>利用現有複合加盟體系，讓SPA業主、美容沙龍導入台鹽香氛產品，延伸至服務場景。香氛天然適合SPA體驗情境，可提升坪效與客單價。</p>
+    </div>
+  </div>
+
+  <div class="card-grid col2">
+    <div class="card teal">
+      <h4>📱 社群內容方向（建議）</h4>
+      <p>① 「台灣海鹽溯源」系列形象影片（品牌故事）<br>② KOL開箱香氛禮盒 × 使用儀式感情境<br>③ 調香工坊體驗打卡內容（UGC）<br>④ 台灣節氣 × 香氛限定系列（立春、穀雨、夏至）<br>⑤ 居家香氛佈置教學Reel</p>
+    </div>
+    <div class="card teal">
+      <h4>💰 預估行銷投報（参考）</h4>
+      <p>參考威廉艾米帶貨案例：<br>• 單支開箱Reel預估觸及 30–50萬<br>• 三平台同步發布 × 導購連結<br>• 禮盒單價 NT$1,280 × 帶貨轉換率估1–3%<br>• 預估單次合作業績 <b>NT$39萬–118萬</b><br>（觸及50萬 × 轉換率 1.5% × NT$1,280）</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════ 08 合作場域 ════ -->
+<div class="section" id="venue">
+  <div class="section-tag">08 · Venue Partnership</div>
+  <div class="section-title">首發合作場域：馥鈺台南 × 亞洲香水節</div>
+  <p class="section-lead">台鹽香氛新品概念階段的最佳首發選擇——馥鈺台南（金思味股份有限公司）位於台南地標河樂廣場 B1，是台灣首屆亞洲香水節的官方合作場域，兼具人流、專業背書與香氛社群影響力。</p>
+
+  <!-- 場域亮點 -->
+  <div class="curve-section" style="margin-bottom:24px">
+    <h3>📍 馥鈺台南｜河樂廣場 B1 香味體驗場域</h3>
+    <p>由金思味股份有限公司經營，定位為沉浸式香氛體驗空間，販售香氛相關產品，並長期作為亞洲香水節系列活動的核心合作場域。進駐此處，台鹽香氛新品將直接站上台灣最具影響力的香氛專業舞台。</p>
+    <div class="phase-track">
+      <div class="phase"><div class="phase-dot">🏛️</div><div class="phase-label">場域定位</div><div class="phase-name">台南地標<br>河樂廣場 B1</div></div>
+      <div class="phase"><div class="phase-dot">🌸</div><div class="phase-label">合作背書</div><div class="phase-name">亞洲香水節<br>官方場域</div></div>
+      <div class="phase"><div class="phase-dot">👥</div><div class="phase-label">客群</div><div class="phase-name">香氛愛好者<br>旅遊人流</div></div>
+      <div class="phase"><div class="phase-dot">🚀</div><div class="phase-label">機會</div><div class="phase-name">台鹽香氛<br>品牌首發</div></div>
+    </div>
+  </div>
+
+  <!-- 為什麼選這裡 -->
+  <div class="card-grid col3" style="margin-bottom:20px">
+    <div class="card">
+      <h4>🎪 亞洲香水節品牌背書</h4>
+      <p>亞洲香水節是台灣新興香氛圈最具影響力的年度盛事，在台南、高雄等地舉辦展覽與工作坊。作為合作場域，馥鈺台南本身即是香氛專業族群的聚集點，台鹽新品進駐等同獲得圈內認可。</p>
+    </div>
+    <div class="card">
+      <h4>🌊 河樂廣場人流優勢</h4>
+      <p>河樂廣場（The Spring）是台南最熱門的打卡景點之一，前身為中國城，改建後成為城市潟湖親水公園，日均吸引大量本地居民與觀光客。B1 位置可同步觸及香氛愛好者與一般消費者。</p>
+    </div>
+    <div class="card">
+      <h4>🧪 概念驗證最佳場所</h4>
+      <p>台鹽香氛新品仍在概念階段，馥鈺台南提供了「低風險市場驗證」的絕佳機會——以少量樣品上架，在真實消費者中測試接受度、定價反應與最受歡迎香調，為正式開發提供數據依據。</p>
+    </div>
+  </div>
+
+  <!-- 合作方式建議 -->
+  <div class="section-tag" style="margin-bottom:8px">合作方式建議</div>
+
+  <div class="challenge-item">
+    <div class="challenge-num" style="background:#e8f4f8;color:#1a5276">A</div>
+    <div>
+      <h5>樣品寄售上架（最快落地）</h5>
+      <p>先以少量台鹽現有相關保養品（如海鹽系列身體磨砂霜、保濕噴霧）以「香氛保養」角度重新包裝概念，上架馥鈺台南測試市場反應。同步蒐集消費者偏好香調、定價接受度等回饋，作為新品開發依據。</p>
+    </div>
+  </div>
+  <div class="challenge-item">
+    <div class="challenge-num" style="background:#e8f4f8;color:#1a5276">B</div>
+    <div>
+      <h5>聯名快閃 × 亞洲香水節</h5>
+      <p>洽談台鹽生技與馥鈺台南於亞洲香水節期間合辦「台灣海鹽香氛快閃體驗」，設計海鹽擴香石DIY體驗攤位，結合台鹽品牌故事展覽，讓消費者與香氛社群直接接觸台鹽香氛概念。媒體曝光與社群擴散效益高。</p>
+    </div>
+  </div>
+  <div class="challenge-item">
+    <div class="challenge-num" style="background:#e8f4f8;color:#1a5276">C</div>
+    <div>
+      <h5>長期展示合作（品牌在場感）</h5>
+      <p>以品牌故事展示角為主，陳列台鹽香氛概念品與台灣海鹽原料溯源故事，搭配QR Code導引至台塩線上購。不以業績為主要目標，以品牌形象建立為核心，為未來正式香氛產品線鋪路。</p>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <p>⚡ <strong>建議優先執行 A + B 雙軌並行：</strong>短期以現有產品上架驗證市場（A），中期搭配亞洲香水節活動製造話題聲量（B）。兩者成本低、速度快，且可產生真實消費者數據，為正式香氛新品開發提供最有價值的市場訊號。</p>
+  </div>
+
+  <!-- KOL串聯 -->
+  <div class="section-tag" style="margin:24px 0 8px">KOL 串聯建議</div>
+  <div class="kol-box">
+    <div class="kol-icon">🎬</div>
+    <div class="kol-content">
+      <h4>威廉艾米 × 馥鈺台南 × 台鹽香氛｜三方串聯</h4>
+      <p>邀請威廉艾米至河樂廣場拍攝台南旅遊 Vlog，自然置入馥鈺台南香氛體驗場景與台鹽香氛新品概念，同步呈現「地標打卡 × 香氛生活體驗」的內容組合。這樣的內容不只是廣告，更是旅遊內容，觸及旅遊族群與香氛族群雙重受眾，為台鹽香氛在台南建立第一波品牌印象。</p>
+      <div class="kol-stats">
+        <span class="kol-stat">河樂廣場打卡</span>
+        <span class="kol-stat">台南旅遊 Vlog</span>
+        <span class="kol-stat">台南河樂廣場</span>
+        <span class="kol-stat">三平台同步 65萬+觸及</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ 09 執行路線圖 ════ -->
+<div class="section" id="roadmap">
+  <div class="section-tag">09 · Roadmap</div>
+  <div class="section-title">執行路線圖</div>
+  <p class="section-lead">建議分四個階段，以18–24個月完成第二曲線的基礎建設，在現有資源框架內最大化成功機率。</p>
+
+  <div class="roadmap">
+    <div class="road-card">
+      <div class="road-header p1">Phase 1｜品牌建立（0–6個月）</div>
+      <div class="road-body">
+        <div class="road-item"><div class="road-dot"></div>確立香氛子品牌命名與視覺識別</div>
+        <div class="road-item"><div class="road-dot"></div><b>馥鈺台南寄售上架</b>：現有產品以香氛概念切入，驗證市場反應</div>
+        <div class="road-item"><div class="road-dot"></div><b>亞洲香水節快閃活動</b>：海鹽香氛 DIY 體驗攤位，製造首波聲量</div>
+        <div class="road-item"><div class="road-dot"></div>威廉艾米台南旅遊 Vlog × 馥鈺台南（河樂廣場）串聯</div>
+        <div class="road-item"><div class="road-dot"></div>開發旗艦品：海鹽磨砂霜 + 擴香禮盒（依市場回饋調整）</div>
+        <div class="road-item"><div class="road-dot"></div>建立品牌社群帳號（IG為主）</div>
+      </div>
+    </div>
+    <div class="road-card">
+      <div class="road-header p2">Phase 2｜產品擴張（6–12個月）</div>
+      <div class="road-body">
+        <div class="road-item"><div class="road-dot"></div>推出個人香水系列（3款核心香調）</div>
+        <div class="road-item"><div class="road-dot"></div>節慶禮盒進入momo/PChome主推版位</div>
+        <div class="road-item"><div class="road-dot"></div>複合加盟通路導入香氛產品線</div>
+        <div class="road-item"><div class="road-dot"></div>擴大KOL矩陣（美妝、生活、旅遊型）</div>
+        <div class="road-item"><div class="road-dot"></div>台灣節氣限定系列發布</div>
+      </div>
+    </div>
+    <div class="road-card">
+      <div class="road-header p3">Phase 3｜體驗深化（12–18個月）</div>
+      <div class="road-body">
+        <div class="road-item"><div class="road-dot"></div>正式推出付費調香工作坊課程</div>
+        <div class="road-item"><div class="road-dot"></div>百貨通路/選品集合店洽談進駐</div>
+        <div class="road-item"><div class="road-dot"></div>品牌大使計畫（長期KOL合作）</div>
+        <div class="road-item"><div class="road-dot"></div>客製企業香氛服務（B2B）</div>
+        <div class="road-item"><div class="road-dot"></div>AI調香互動體驗（線上個性化推薦）</div>
+      </div>
+    </div>
+    <div class="road-card">
+      <div class="road-header p4">Phase 4｜規模化（18個月+）</div>
+      <div class="road-body">
+        <div class="road-item"><div class="road-dot"></div>評估海外市場切入（日本、東南亞）</div>
+        <div class="road-item"><div class="road-dot"></div>建立「台灣香氛」品牌國際識別</div>
+        <div class="road-item"><div class="road-dot"></div>香氛品類成為第二大業務貢獻</div>
+        <div class="road-item"><div class="road-dot"></div>考慮獨立品牌操作或授權合作</div>
+        <div class="road-item"><div class="road-dot"></div>回顧第一曲線整合效益，決策下一輪</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="card-grid col3">
+    <div class="card dark">
+      <h4>🎯 核心 KPI（Year 1）</h4>
+      <p>• 香氛禮盒電商月銷目標：500組<br>• KOL合作觸及：每季1次主合作<br>• 馥鈺台南調香工作坊：月辦2–4場<br>• IG品牌帳號：6個月達5,000粉絲</p>
+    </div>
+    <div class="card dark">
+      <h4>💡 最小可行性驗證</h4>
+      <p>先以「亞洲香水節限定香氛禮盒」在馥鈺台南現場銷售，用最低成本驗證消費者接受度與定價，再決定是否全面推出。</p>
+    </div>
+    <div class="card dark">
+      <h4>⚡ 立即可行動項目</h4>
+      <p>① 聯繫金思味洽談馥鈺台南上架合作條件<br>② 確認亞洲香水節2026檔期，洽談快閃攤位<br>③ 洽談KOL威廉艾米台南串聯合作<br>④ 盤點現有保養品可以「香氛切角」重新包裝的品項</p>
+    </div>
+  </div>
+
+  <p class="source-note">
+    資料來源：CMRI美妝行銷總研（2025上半年美妝產業報告）、Statista/Euromonitor（2024亞洲香氛市場報告）、
+    聯合新聞網（台鹽加盟策略報導）、MoneyDJ理財網（臺鹽實業公司資料）、
+    台鹽生技官網（tybio.com.tw）、NiTyLeE香氣觀察（2025香水香氛產業趨勢預測）
+  </p>
+</div>
+
+<!-- ════ FOOTER ════ -->
+<div class="footer-bar">
+  <span>台鹽生技 第二生命曲線策略｜香氛品類分析報告｜2026</span>
+  <span>Internal Use Only · Not for Distribution</span>
+</div>
+
+</div>
+</body>
+</html>
