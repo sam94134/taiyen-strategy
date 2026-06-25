@@ -698,6 +698,132 @@ body{font-family:'Noto Sans TC',sans-serif;background:#f4f2ef;color:#1a1a1a;font
     </div>
   </div>
 
+  <div class="divider"></div>
+
+  <!-- 24個月滲透率與月營收預測 -->
+  <div style="background:#fff;border-radius:14px;padding:28px 30px;box-shadow:0 2px 12px rgba(0,0,0,.06);margin-bottom:24px">
+    <div style="font-size:13px;font-weight:700;color:#0d2137;margin-bottom:6px">📈 香氛產品線 24 個月滲透率與月營收成長預測</div>
+    <div style="font-size:11.5px;color:#666;margin-bottom:20px">以台鹽全台 79 家門市為基礎，假設第 1 個月滲透率 2%（約 1.6 家門市）逐步提升至第 24 個月 30%（約 24 家）</div>
+
+    <!-- SVG 折線圖 -->
+    <svg viewBox="0 0 760 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;margin-bottom:20px">
+      <!-- 背景格線 -->
+      <line x1="40" y1="20" x2="40" y2="170" stroke="#e8eef4" stroke-width="1"/>
+      <line x1="40" y1="170" x2="750" y2="170" stroke="#e8eef4" stroke-width="1"/>
+      <line x1="40" y1="120" x2="750" y2="120" stroke="#e8eef4" stroke-width="0.5" stroke-dasharray="3,3"/>
+      <line x1="40" y1="70" x2="750" y2="70" stroke="#e8eef4" stroke-width="0.5" stroke-dasharray="3,3"/>
+      <!-- Y軸標籤 -->
+      <text x="34" y="173" text-anchor="end" font-size="9" fill="#aaa">0</text>
+      <text x="34" y="123" text-anchor="end" font-size="9" fill="#aaa">430</text>
+      <text x="34" y="73" text-anchor="end" font-size="9" fill="#aaa">700</text>
+      <text x="34" y="23" text-anchor="end" font-size="9" fill="#aaa">870萬</text>
+      <!-- 折線：數據點 (x = 40 + (month-1)*30, y = 170 - revenue/870*150) -->
+      <!-- M1=57.4 M2=103.3 M3=149.2 M4=195.2 M5=241.1 M6=287.0 M7=310.9 M8=334.8 M9=358.8 M10=382.7 M11=406.6 M12=430.5 M13=464.0 M14=497.5 M15=531.0 M16=564.4 M17=597.9 M18=631.4 M19=669.7 M20=707.9 M21=746.2 M22=784.5 M23=822.7 M24=861.0 -->
+      <polyline
+        fill="none"
+        stroke="#1a5276"
+        stroke-width="2"
+        stroke-linejoin="round"
+        points="
+          40,160 70,152 100,144 130,136 160,128 190,120
+          220,117 250,112 280,108 310,104 340,100 370,96
+          400,90 430,84 460,78 490,73 520,67 550,62
+          580,55 610,48 640,41 670,35 700,28 730,21
+        "
+      />
+      <!-- 里程碑點 -->
+      <circle cx="190" cy="120" r="5" fill="#1a5276" stroke="#fff" stroke-width="1.5"/>
+      <text x="190" y="113" text-anchor="middle" font-size="8" fill="#1a5276" font-weight="bold">M6</text>
+      <circle cx="370" cy="96" r="5" fill="#0e7a5a" stroke="#fff" stroke-width="1.5"/>
+      <text x="370" y="89" text-anchor="middle" font-size="8" fill="#0e7a5a" font-weight="bold">M12</text>
+      <circle cx="550" cy="62" r="5" fill="#7d3c98" stroke="#fff" stroke-width="1.5"/>
+      <text x="550" y="55" text-anchor="middle" font-size="8" fill="#7d3c98" font-weight="bold">M18</text>
+      <circle cx="730" cy="21" r="5" fill="#c0392b" stroke="#fff" stroke-width="1.5"/>
+      <text x="730" y="14" text-anchor="middle" font-size="8" fill="#c0392b" font-weight="bold">M24</text>
+      <!-- X軸月份 -->
+      <text x="40"  y="182" text-anchor="middle" font-size="8" fill="#aaa">1</text>
+      <text x="100" y="182" text-anchor="middle" font-size="8" fill="#aaa">3</text>
+      <text x="160" y="182" text-anchor="middle" font-size="8" fill="#aaa">5</text>
+      <text x="220" y="182" text-anchor="middle" font-size="8" fill="#aaa">7</text>
+      <text x="280" y="182" text-anchor="middle" font-size="8" fill="#aaa">9</text>
+      <text x="340" y="182" text-anchor="middle" font-size="8" fill="#aaa">11</text>
+      <text x="400" y="182" text-anchor="middle" font-size="8" fill="#aaa">13</text>
+      <text x="460" y="182" text-anchor="middle" font-size="8" fill="#aaa">15</text>
+      <text x="520" y="182" text-anchor="middle" font-size="8" fill="#aaa">17</text>
+      <text x="580" y="182" text-anchor="middle" font-size="8" fill="#aaa">19</text>
+      <text x="640" y="182" text-anchor="middle" font-size="8" fill="#aaa">21</text>
+      <text x="700" y="182" text-anchor="middle" font-size="8" fill="#aaa">23</text>
+      <text x="730" y="182" text-anchor="middle" font-size="8" fill="#aaa">24</text>
+      <text x="390" y="197" text-anchor="middle" font-size="9" fill="#888">月份</text>
+    </svg>
+
+    <!-- 里程碑卡片列 -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;margin-bottom:20px">
+      <div style="background:linear-gradient(135deg,#1a5276,#1f6fa8);color:#fff;border-radius:10px;padding:14px 16px">
+        <div style="font-size:10px;color:rgba(255,255,255,.6);letter-spacing:.5px;margin-bottom:4px">M6 · Y1H1結束</div>
+        <div style="font-size:22px;font-weight:900;line-height:1">287<span style="font-size:11px;font-weight:400">萬</span></div>
+        <div style="font-size:10px;color:rgba(255,255,255,.7);margin-top:4px">滲透率 10%｜產品力驗證</div>
+      </div>
+      <div style="background:linear-gradient(135deg,#0e7a5a,#10a077);color:#fff;border-radius:10px;padding:14px 16px">
+        <div style="font-size:10px;color:rgba(255,255,255,.6);letter-spacing:.5px;margin-bottom:4px">M12 · Y1結束</div>
+        <div style="font-size:22px;font-weight:900;line-height:1">430<span style="font-size:11px;font-weight:400">萬</span></div>
+        <div style="font-size:10px;color:rgba(255,255,255,.7);margin-top:4px">滲透率 15%｜曝光策略驗證</div>
+      </div>
+      <div style="background:linear-gradient(135deg,#7d3c98,#9b59b6);color:#fff;border-radius:10px;padding:14px 16px">
+        <div style="font-size:10px;color:rgba(255,255,255,.6);letter-spacing:.5px;margin-bottom:4px">M18 · Y2H1結束</div>
+        <div style="font-size:22px;font-weight:900;line-height:1">631<span style="font-size:11px;font-weight:400">萬</span></div>
+        <div style="font-size:10px;color:rgba(255,255,255,.7);margin-top:4px">滲透率 22%｜路線A/B決策</div>
+      </div>
+      <div style="background:linear-gradient(135deg,#c0392b,#e74c3c);color:#fff;border-radius:10px;padding:14px 16px">
+        <div style="font-size:10px;color:rgba(255,255,255,.6);letter-spacing:.5px;margin-bottom:4px">M24 · 達標</div>
+        <div style="font-size:22px;font-weight:900;line-height:1">861<span style="font-size:11px;font-weight:400">萬</span></div>
+        <div style="font-size:10px;color:rgba(255,255,255,.7);margin-top:4px">滲透率 30%｜完整產品線</div>
+      </div>
+    </div>
+
+    <!-- 逐月數據表 -->
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:11.5px">
+        <thead>
+          <tr style="background:#0d2137;color:#fff">
+            <th style="padding:7px 10px;text-align:center;font-weight:600">月份</th>
+            <th style="padding:7px 10px;text-align:center;font-weight:600">滲透率</th>
+            <th style="padding:7px 10px;text-align:right;font-weight:600">月營收（萬元）</th>
+            <th style="padding:7px 10px;text-align:right;font-weight:600">較上月增量</th>
+            <th style="padding:7px 10px;text-align:left;font-weight:600">里程碑</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#f0f7fb"><td style="padding:5px 10px;text-align:center;color:#1a5276;font-weight:700">1</td><td style="padding:5px 10px;text-align:center">2.0%</td><td style="padding:5px 10px;text-align:right">57.4</td><td style="padding:5px 10px;text-align:right;color:#aaa">—</td><td style="padding:5px 10px;color:#1a5276;font-weight:600">🚀 起跑：會員封閉預售啟動</td></tr>
+          <tr><td style="padding:5px 10px;text-align:center;color:#555">2</td><td style="padding:5px 10px;text-align:center">3.6%</td><td style="padding:5px 10px;text-align:right">103.3</td><td style="padding:5px 10px;text-align:right;color:#1a5276">+45.9</td><td style="padding:5px 10px;color:#888"></td></tr>
+          <tr style="background:#fafafa"><td style="padding:5px 10px;text-align:center;color:#555">3</td><td style="padding:5px 10px;text-align:center">5.2%</td><td style="padding:5px 10px;text-align:right">149.2</td><td style="padding:5px 10px;text-align:right;color:#1a5276">+45.9</td><td style="padding:5px 10px;color:#888"></td></tr>
+          <tr><td style="padding:5px 10px;text-align:center;color:#555">4</td><td style="padding:5px 10px;text-align:center">6.8%</td><td style="padding:5px 10px;text-align:right">195.2</td><td style="padding:5px 10px;text-align:right;color:#1a5276">+45.9</td><td style="padding:5px 10px;color:#888"></td></tr>
+          <tr style="background:#fafafa"><td style="padding:5px 10px;text-align:center;color:#555">5</td><td style="padding:5px 10px;text-align:center">8.4%</td><td style="padding:5px 10px;text-align:right">241.1</td><td style="padding:5px 10px;text-align:right;color:#1a5276">+45.9</td><td style="padding:5px 10px;color:#888"></td></tr>
+          <tr style="background:#e8f4f8;font-weight:700"><td style="padding:6px 10px;text-align:center;color:#1a5276">6</td><td style="padding:6px 10px;text-align:center;color:#1a5276">10.0%</td><td style="padding:6px 10px;text-align:right;color:#1a5276">287.0</td><td style="padding:6px 10px;text-align:right;color:#1a5276">+45.9</td><td style="padding:6px 10px;color:#1a5276">✅ Y1H1結束：產品力驗證關卡</td></tr>
+          <tr><td style="padding:5px 10px;text-align:center;color:#555">7</td><td style="padding:5px 10px;text-align:center">10.8%</td><td style="padding:5px 10px;text-align:right">310.9</td><td style="padding:5px 10px;text-align:right;color:#1a5276">+23.9</td><td style="padding:5px 10px;color:#888"></td></tr>
+          <tr style="background:#fafafa"><td style="padding:5px 10px;text-align:center;color:#555">8</td><td style="padding:5px 10px;text-align:center">11.7%</td><td style="padding:5px 10px;text-align:right">334.8</td><td style="padding:5px 10px;text-align:right;color:#1a5276">+23.9</td><td style="padding:5px 10px;color:#888"></td></tr>
+          <tr><td style="padding:5px 10px;text-align:center;color:#555">9</td><td style="padding:5px 10px;text-align:center">12.5%</td><td style="padding:5px 10px;text-align:right">358.8</td><td style="padding:5px 10px;text-align:right;color:#1a5276">+23.9</td><td style="padding:5px 10px;color:#888"></td></tr>
+          <tr style="background:#fafafa"><td style="padding:5px 10px;text-align:center;color:#555">10</td><td style="padding:5px 10px;text-align:center">13.3%</td><td style="padding:5px 10px;text-align:right">382.7</td><td style="padding:5px 10px;text-align:right;color:#1a5276">+23.9</td><td style="padding:5px 10px;color:#888"></td></tr>
+          <tr><td style="padding:5px 10px;text-align:center;color:#555">11</td><td style="padding:5px 10px;text-align:center">14.2%</td><td style="padding:5px 10px;text-align:right">406.6</td><td style="padding:5px 10px;text-align:right;color:#1a5276">+23.9</td><td style="padding:5px 10px;color:#888"></td></tr>
+          <tr style="background:#eafaf1;font-weight:700"><td style="padding:6px 10px;text-align:center;color:#0e7a5a">12</td><td style="padding:6px 10px;text-align:center;color:#0e7a5a">15.0%</td><td style="padding:6px 10px;text-align:right;color:#0e7a5a">430.5</td><td style="padding:6px 10px;text-align:right;color:#0e7a5a">+23.9</td><td style="padding:6px 10px;color:#0e7a5a">✅ Y1結束：曝光策略驗證關卡</td></tr>
+          <tr><td style="padding:5px 10px;text-align:center;color:#555">13</td><td style="padding:5px 10px;text-align:center">16.2%</td><td style="padding:5px 10px;text-align:right">464.0</td><td style="padding:5px 10px;text-align:right;color:#1a5276">+33.5</td><td style="padding:5px 10px;color:#888"></td></tr>
+          <tr style="background:#fafafa"><td style="padding:5px 10px;text-align:center;color:#555">14</td><td style="padding:5px 10px;text-align:center">17.3%</td><td style="padding:5px 10px;text-align:right">497.5</td><td style="padding:5px 10px;text-align:right;color:#1a5276">+33.5</td><td style="padding:5px 10px;color:#888"></td></tr>
+          <tr><td style="padding:5px 10px;text-align:center;color:#555">15</td><td style="padding:5px 10px;text-align:center">18.5%</td><td style="padding:5px 10px;text-align:right">531.0</td><td style="padding:5px 10px;text-align:right;color:#1a5276">+33.5</td><td style="padding:5px 10px;color:#888"></td></tr>
+          <tr style="background:#fafafa"><td style="padding:5px 10px;text-align:center;color:#555">16</td><td style="padding:5px 10px;text-align:center">19.7%</td><td style="padding:5px 10px;text-align:right">564.4</td><td style="padding:5px 10px;text-align:right;color:#1a5276">+33.5</td><td style="padding:5px 10px;color:#888"></td></tr>
+          <tr><td style="padding:5px 10px;text-align:center;color:#555">17</td><td style="padding:5px 10px;text-align:center">20.8%</td><td style="padding:5px 10px;text-align:right">597.9</td><td style="padding:5px 10px;text-align:right;color:#1a5276">+33.5</td><td style="padding:5px 10px;color:#888"></td></tr>
+          <tr style="background:#f5eef8;font-weight:700"><td style="padding:6px 10px;text-align:center;color:#7d3c98">18</td><td style="padding:6px 10px;text-align:center;color:#7d3c98">22.0%</td><td style="padding:6px 10px;text-align:right;color:#7d3c98">631.4</td><td style="padding:6px 10px;text-align:right;color:#7d3c98">+33.5</td><td style="padding:6px 10px;color:#7d3c98">✅ Y2H1結束：路線A/B決策關卡</td></tr>
+          <tr><td style="padding:5px 10px;text-align:center;color:#555">19</td><td style="padding:5px 10px;text-align:center">23.3%</td><td style="padding:5px 10px;text-align:right">669.7</td><td style="padding:5px 10px;text-align:right;color:#1a5276">+38.3</td><td style="padding:5px 10px;color:#888"></td></tr>
+          <tr style="background:#fafafa"><td style="padding:5px 10px;text-align:center;color:#555">20</td><td style="padding:5px 10px;text-align:center">24.7%</td><td style="padding:5px 10px;text-align:right">707.9</td><td style="padding:5px 10px;text-align:right;color:#1a5276">+38.3</td><td style="padding:5px 10px;color:#888"></td></tr>
+          <tr><td style="padding:5px 10px;text-align:center;color:#555">21</td><td style="padding:5px 10px;text-align:center">26.0%</td><td style="padding:5px 10px;text-align:right">746.2</td><td style="padding:5px 10px;text-align:right;color:#1a5276">+38.3</td><td style="padding:5px 10px;color:#888"></td></tr>
+          <tr style="background:#fafafa"><td style="padding:5px 10px;text-align:center;color:#555">22</td><td style="padding:5px 10px;text-align:center">27.3%</td><td style="padding:5px 10px;text-align:right">784.5</td><td style="padding:5px 10px;text-align:right;color:#1a5276">+38.3</td><td style="padding:5px 10px;color:#888"></td></tr>
+          <tr><td style="padding:5px 10px;text-align:center;color:#555">23</td><td style="padding:5px 10px;text-align:center">28.7%</td><td style="padding:5px 10px;text-align:right">822.7</td><td style="padding:5px 10px;text-align:right;color:#1a5276">+38.3</td><td style="padding:5px 10px;color:#888"></td></tr>
+          <tr style="background:#fdf0ef;font-weight:700"><td style="padding:6px 10px;text-align:center;color:#c0392b">24</td><td style="padding:6px 10px;text-align:center;color:#c0392b">30.0%</td><td style="padding:6px 10px;text-align:right;color:#c0392b">861.0</td><td style="padding:6px 10px;text-align:right;color:#c0392b">+38.3</td><td style="padding:6px 10px;color:#c0392b">🏆 達標：完整產品線＋30%滲透</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="font-size:10px;color:#aaa;margin-top:10px">假設基礎：全台門市平均每月香氛客單價 NT$1,500，滲透率為門市實際販售香氛品項比例；增量差異來自各階段推廣強度調整。</div>
+  </div>
+
   <p class="source-note">
     資料來源：CMRI美妝行銷總研（2025上半年美妝產業報告）、Statista/Euromonitor（2024亞洲香氛市場報告）、
     聯合新聞網（台鹽加盟策略報導）、MoneyDJ理財網（臺鹽實業公司資料）、
